@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Record in Flow</title>
+    <script src="bundle.js"></script>
+    <style>
+      canvas { cursor: none; }
+      .flat-videos { 
+        display: flex;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+       }
+      .flat-video { z-index: 100000; position: absolute; cursor:none; background-color: black; width: 100%;
+      }
+      body { cursor: none; background: black }
+      .a-enter-vr-button{visibility: hidden; }
+    </style>
+  </head>
+  <body>
+
+    <div class="flat-videos">
+
+      <video id="f-2" class="flat-video" src="videos/2-reg.mp4"></video>
+      <video id="f-4" class="flat-video" src="videos/4-reg.mp4"></video>
+      <video id="f-6" class="flat-video" src="videos/6-reg.mp4"></video>
+      <video id="f-8" class="flat-video" src="videos/8-reg.mp4"></video>
+<!--       <video id="f-10" class="flat-video" src="videos/10-reg.mp4"></video>
+ -->
+    </div>
+
+    <a-scene>
+
+      <a-entity camera="fov:80" no-click-look-controls wasd-controls cursor-color="#33CCFF">
+        <a-entity cursor position="0 0 -80" geometry="primitive:ring" material="color:white;shader:flat;opacity:0;"></a-entity>
+      </a-entity>
+
+      <a-sky id="a-1" class="video" data-is360='true' src="videos/1-360.mp4" visible='true'></a-sky>
+      <a-sky id="a-3" class="video" data-is360='true' src="videos/3-360.mp4" visible='false'></a-sky>
+      <a-sky id="a-5" class="video" data-is360='true' src="videos/5-360.mp4" visible='false'></a-sky>
+      <a-sky id="a-7" class="video" data-is360='true' src="videos/7-360.mp4" visible='false'></a-sky>
+<!--       <a-sky id="a-9" class="video" data-is360='true' src="videos/9-360.mp4" visible='false'></a-sky> -->
+
+    </a-scene>
+
+    <script src="script.js"></script>
+  </body>
+</html>
